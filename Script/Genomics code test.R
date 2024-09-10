@@ -32,3 +32,6 @@ print(gc_content)
 
 # Create a sample DNA sequence or read it from a FASTA file
 dna_sequence <- DNAString("ATGCGATCGTACGATCGGCTAGCTAGGCTA")
+
+# Define the pattern/motif you want to search for (e.g., 'GATCG')
+motif <- "GATCG"
