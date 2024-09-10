@@ -44,3 +44,6 @@ match_start_positions <- start(pattern_matches)
 
 # Count how many times the motif appears
 motif_count <- countPattern(motif, dna_sequence)
+
+# Print the number of occurrences
+print(paste("The motif", motif, "appears", motif_count, "times in the sequence."))
