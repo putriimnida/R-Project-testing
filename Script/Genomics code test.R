@@ -35,3 +35,12 @@ dna_sequence <- DNAString("ATGCGATCGTACGATCGGCTAGCTAGGCTA")
 
 # Define the pattern/motif you want to search for (e.g., 'GATCG')
 motif <- "GATCG"
+
+# Print the result, including start positions of matches
+pattern_matches
+
+# Get the start positions of the matched motifs
+match_start_positions <- start(pattern_matches)
+
+# Count how many times the motif appears
+motif_count <- countPattern(motif, dna_sequence)
