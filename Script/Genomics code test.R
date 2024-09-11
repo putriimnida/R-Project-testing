@@ -47,3 +47,11 @@ motif_count <- countPattern(motif, dna_sequence)
 
 # Print the number of occurrences
 print(paste("The motif", motif, "appears", motif_count, "times in the sequence."))
+
+# Get basic information
+seq_lengths <- width(sequences)  # Length of each sequence
+cat("Lengths of sequences: ", seq_lengths, "\n")
+
+# Count nucleotide frequencies for the first sequence
+nuc_freq <- letterFrequency(sequences[1], letters = c("A", "T", "C", "G"))
+cat("Nucleotide frequencies in the first sequence: \n", nuc_freq)
