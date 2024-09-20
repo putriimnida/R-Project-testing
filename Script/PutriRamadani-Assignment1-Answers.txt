@@ -1,0 +1,110 @@
+Putri Ramadani
+ASSIGNMENT 1
+
+1. (2 points) How many data columns in this file and what does each column mean?
+(short answer – no Unix command needed)
+
+There are 9 data columns.
+
+Explanation
+GeneID: the gene's identifier
+AssociatedGenes: genes connected to the specified illness
+RelatedGenes: genes related to the associated gene
+ConceptID: identifier for a particular medical concept, such as disease, condition, etc.
+DiseaseName: name of the disease
+SourceName: name of the source providing the data
+SourceID: identifier for the source
+DiseaseMIM: reference number for the disease; MIM is Mendelian Inheritance in Man
+LastUpdated: the date when the information was last updated
+
+
+
+2. (1 point) How many unique terms in each column? (Note: include all Unix
+commands, even though they are similar to each other)
+
+Column 1
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f1 | sort | uniq | wc -l
+4996
+
+Column 2
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f2 | sort | uniq | wc -l
+4997
+
+Column 3
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f3 | sort | uniq | wc -l
+1722
+
+Column 4
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f4 | sort | uniq | wc -l
+7377
+
+Column 5
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f5 | sort | uniq | wc -l
+7378
+
+Column 6
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f6 | sort | uniq | wc -l
+8
+
+Column 7
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f7 | sort | uniq | wc -l
+6876
+
+Column 8
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f8 | sort | uniq | wc -l
+6659
+
+Column 9
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ tail -n +2 gene_condition_source_id.txt | grep -v "^$" | cut -f9 | sort | uniq | wc -l
+749
+
+
+
+3. (1 point) How many lines contain the term “cancer”?
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+
+$ grep -i "cancer" gene_condition_source_id.txt | wc -l
+142
+
+
+
+4. (1 point) How many unique types of cancer are listed?
+
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ grep -i "cancer" gene_condition_source_id.txt | cut -f5 | sort -u | wc -l
+46
+
+
+
+5. (1 point) How many unique phenotypes are linked to the TP53 gene?
+
+ADVAN@DESKTOP-LKLP2BA ~/PutriRamadani-Assignment1
+$ grep -w "TP53" gene_condition_source_id.txt | cut -f5 | sort -u | wc -l
+17
+
+
+
+6. (2 points) This section uses the ClinVar database. In class, we used the Human
+Phenotype Ontology database. These are two different databases with some
+overlap in content. How do the TP53-linked phenotypes you find from ClinVar
+compare to the phenotypes linked to TP53 that we examined in the in-class lab,
+derived from the Human Phenotype Ontology? (for example, are they the same
+or different? Which database would you use if you needed to look up human
+phenotypes in your job?) (short answer, no code needed)
+
+The databases show overlap, but they are different. Comparison:
+ClinVar: highlights genetic variations, clinical significance, and how they relate to certain disorders, such as how specific genetic changes in TP53 are linked to cancer.
+Human Phenotype Ontology (HPO): covers a wide range of human phenotypes, including those associated with genetic disorders, and provides a detailed and standardized vocabulary for describing symptoms across different diseases.  It includes phenotypes associated with TP53 mutations.
+
+
+Data base to use:
+To understand clinical phenotypes and their relationships, choosing HPO would be better. However, to know more detailed information on specific genetic variants and their clinical significance, ClinVar would be more useful. Both databases can also be used together for a more comprehensive insights depends on the particular needs.
